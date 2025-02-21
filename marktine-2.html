@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Intelligence Services | Transform Complexity Into Strength</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --bg-light: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d4b77 100%);
+            color: white;
+            padding: 160px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1200/600');
+            background-size: cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            width: fit-content;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+        
+        .reviews {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .secondary-button {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .secondary-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 100px 0;
+            background-color: var(--bg-light);
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: #5a6a7a;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            margin: 15px;
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+            border-radius: 50%;
+        }
+        
+        .step-icon img {
+            width: 40px;
+        }
+        
+        .step h3 {
+            color: var(--secondary-color);
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .step p {
+            color: #5a6a7a;
+            font-size: 16px;
+        }
+        
+        .step-divider {
+            margin-top: 20px;
+            border-top: 2px dashed #ddd;
+            padding-top: 15px;
+        }
+        
+        .step-highlight {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .service-card {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-image {
+            flex: 1;
+            min-width: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            flex: 2;
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            color: #5a6a7a;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            margin-bottom: 25px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .feature-icon {
+            color: var(--secondary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .impact {
+            background: rgba(52, 152, 219, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .impact strong {
+            color: var(--secondary-color);
+        }
+        
+        .learn-more {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .learn-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4ecf7 100%);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-content {
+            font-size: 16px;
+            color: #5a6a7a;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-content::before {
+            content: """;
+            font-size: 60px;
+            color: rgba(52, 152, 219, 0.2);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .author-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #5a6a7a;
+            font-size: 14px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #1a5276 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-box {
+            background: rgba(255, 255, 255, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .cta-box h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-features {
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .cta-icon {
+            margin-right: 15px;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .cta-button-large {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button-large:hover {
+            background-color: #2980b9;
+        }
+        
+        .cta-disclaimer {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero h2 {
+                font-size: 20px;
+            }
+            
+            .process-steps, .services-grid {
+                flex-direction: column;
+            }
+            
+            .service-card {
+                flex-direction: column;
+            }
+            
+            .service-image {
+                height: 200px;
+                min-width: 100%;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Marktine</div>
+                <div class="nav-links">
+                    <a href="#process">Our Process</a>
+                    <a href="#services">Services</a>
+                    <a href="#testimonials">Client Success</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="cta-button">Get Started</button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Business Complexity Into Competitive Strength</h1>
+                <h2>Your Business Challenge → Our Intelligence Solution
+                </br>
+                    Every piece of data tells a story. We help you understand it.</h2>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                    <div class="reviews">4.9/5 - Based on 39 verified client reviews</div>
+                </div>
+                <p>In today’s market, overflowing with data, success isn’t about how much you know. It’s about how you use that.Our business intelligence solutions transform overwhelming complexity into your greatest competitive advantage.</p>
+                <div class="hero-buttons">
+                    <button class="cta-button">Schedule Consultation</button>
+                    <button class="secondary-button">Explore Solutions</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>From Raw Data to Revenue Growth</br>Simple, Powerful, Transformative</h2>
+                <p>Our systematic approach transforms your business data into actionable intelligence through four key stages</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <img src="/api/placeholder/80/80" alt="Explore icon">
+                    </div>
+                    <h3>EXPLORE</h3>
+                    <p>We collect data from various sources to streamline operations and gain end-to-end visibility across all levels of your business.</p>
+                    <div class="step-divider"></div>
+                    <p class="step-highlight">Our proprietary data integration framework works with your existing infrastructure—no costly overhauls required.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <img src="/api/placeholder/80/80" alt="Analyze icon">
+                    </div>
+                    <h3>ANALYZE</h3>
+                    <p>We analyze valuable data to grow your business and give you competitive edge in today's constantly changing market.</p>
+                    <div class="step-divider"></div>
+                    <p class="step-highlight">Our analysis combines AI-powered algorithms with human expertise for insights that purely automated systems miss.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <img src="/api/placeholder/80/80" alt="Predict icon">
+                    </div>
+                    <h3>PREDICT</h3>
+                    <p>We extract insights from raw data to draw informed conclusions about potential outcomes, enabling smart data-driven decisions.</p>
+                    <div class="step-divider"></div>
+                    <p class="step-highlight">Our models achieve 37% greater prediction accuracy than industry standards by incorporating multi-dimensional variables.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <img src="/api/placeholder/80/80" alt="Deliver icon">
+                    </div>
+                    <h3>DELIVER</h3>
+                    <p>We implement modern, future-proof solutions that scale with your organization's evolving needs.</p>
+                    <div class="step-divider"></div>
+                    <p class="step-highlight">Every solution includes a scalability roadmap, ensuring your BI system grows with your business without costly redevelopment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Solutions Tailored to Your Challenges</h2>
+                <p>Our services covers all aspects of your data needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('/api/placeholder/300/400')"></div>
+                    <div class="service-content">
+                        <h3>Data Mining</h3>
+                        <p>Uncover the gold hidden in your data mountains. We don't just analyze what happened—we reveal why it happened and what will happen next.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Generate new data correlations impossible to see with standard reporting</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Monitor dependencies and patterns that impact performance</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Create accurate forecasts of prices, revenue, ROI, and market demands</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Identify efficiency opportunities that translate directly to bottom-line growth</span>
+                            </div>
+                        </div>
+                        
+                        <div class="impact">
+                            <strong>Client Impact:</strong> A mid-size technology firm discovered a previously hidden customer segment worth $3.2M in annual revenue through our pattern recognition algorithms.
+                        </div>
+                        
+                        <a href="#" class="learn-more">Learn more about Data Mining →</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('/api/placeholder/300/400')"></div>
+                    <div class="service-content">
+                        <h3>Data Visualization</h3>
+                        <p>Complex data becomes instantly understandable through our visualization solutions. We transform abstract numbers into intuitive visual stories.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Interactive dashboards customized for different stakeholder needs</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Real-time performance metrics accessible anywhere</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Comparative visualizations that highlight critical trends</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>User-friendly interfaces that encourage data exploration</span>
+                            </div>
+                        </div>
+                        
+                        <div class="impact">
+                            <strong>Client Impact:</strong> An educational technology company reduced decision-making time by 63% after implementing our executive dashboard system.
+                        </div>
+                        
+                        <a href="#" class="learn-more">Learn more about Data Visualization →</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('/api/placeholder/300/400')"></div>
+                    <div class="service-content">
+                        <h3>Business Intelligence Consulting</h3>
+                        <p>Our consultants bring five decades of combined experience across industries. We'll help you navigate the complex BI landscape and develop a strategic roadmap.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Comprehensive assessment of your current data utilization</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Strategic planning for immediate and long-term BI implementation</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Vendor-neutral technology recommendations</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Change management support for organizational adoption</span>
+                            </div>
+                        </div>
+                        
+                        <div class="impact">
+                            <strong>Client Impact:</strong> A healthcare provider saved $420,000 in planned technology expenses after our consultation revealed more efficient alternatives.
+                        </div>
+                        
+                        <a href="#" class="learn-more">Learn more about BI Consulting →</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('/api/placeholder/300/400')"></div>
+                    <div class="service-content">
+                        <h3>Data Warehouse Consulting</h3>
+                        <p>A robust data warehouse is the backbone of effective business intelligence. Our warehouse consulting ensures you're building on solid ground with scalable architecture.</p>
+                        
+                        <div class="service-features">
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Custom warehouse design optimized for your specific data types</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>ETL process streamlining for faster, more reliable data flows</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Security and compliance framework implementation</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Performance optimization for complex analytical queries</span>
+                            </div>
+                        </div>
+                        
+                        <div class="impact">
+                            <strong>Client Impact:</strong> An e-commerce company reduced data processing time by 78% after implementing our warehouse recommendations.
+                        </div>
+                        
+                        <a href="#" class="learn-more">Learn more about Data Warehouse Consulting →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Real Results, Real Businesses</h2>
+                <p>Hear directly from clients who have transformed their operations through our solutions</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        Before working with this team, we were drowning in data but starving for insights. Now we have clarity across departments, predictable forecasting, and the confidence to make bold strategic moves. Our decision-making velocity has increased exponentially.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-image: url('/api/placeholder/50/50')"></div>
+                        <div class="author-info">
+                            <h4>Daniel Reynolds</h4>
+                            <p>CTO, Enterprise Software Company</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        The ROI was evident within 90 days. Their BI implementation helped us identify productivity bottlenecks we didn't know existed and streamline operations across our educational platform. Data that once took weeks to compile is now available at our fingertips.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-image: url('/api/placeholder/50/50')"></div>
+                        <div class="author-info">
+                            <h4>Jennifer Martinez</h4>
+                            <p>Operations Director, EdTech Provider</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        As a mid-sized business, we were concerned about the investment, but their scalable approach meant we could start small and expand. The initial dashboard implementation paid for itself within the first quarter by helping us optimize our marketing spend.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image" style="background-image: url('/api/placeholder/50/50')"></div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Marketing VP, B2B Service Provider</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <h2>Your Data Journey Starts With One Conversation</h2>
+            <p>Each day your business runs without the right insights is a day lost.</br> The data you need already exists, you just need the right partner.</p>
+            <div class="cta-box">
+                <h3>Book your complimentary 30-minute discovery call</h3>
+               
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <div class="cta-icon">•</div>
+                        <div>Discuss your specific business challenges</div>
+                    </div>
+                    <div class="cta-feature">
+                        <div class="cta-icon">•</div>
+                        <div>Identify quick-win opportunities in your existing data</div>
+                    </div>
+                    <div class="cta-feature">
+                        <div class="cta-icon">•</div>
+                        <div>Outline potential approaches tailored to your situation</div>
+                    </div>
+                    <div class="cta-feature">
+                        <div class="cta-icon">•</div>
+                        <div>Provide a clear understanding of investment and ROI timeline</div>
+                    </div>
+                </div>
+                
+                <a href="#" class="btn btn-primary cta-button">Connect With Our Expert Now</a>
+            </div>
+        </div>
+    </section>
